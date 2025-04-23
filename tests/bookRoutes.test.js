@@ -3,7 +3,7 @@ const express = require('express');
 const bookRoutes = require('../routes/bookRoutes');
 const books = require('../models/bookModel'); // Add this to manipulate in-memory data
 
-// Mock Express app
+
 const app = express();
 app.use(express.json());
 app.use('/books', bookRoutes);
@@ -11,10 +11,10 @@ app.use('/books', bookRoutes);
 let testBookId;
 
 beforeEach(() => {
-    // Reset in-memory store before each test
+
     books.length = 0;
 
-    // Add one test book
+
     const book = {id: '1', name: 'Initial Book', author: 'Test Author', publishedYear: 2000};
     books.push(book);
     testBookId = book.id;
